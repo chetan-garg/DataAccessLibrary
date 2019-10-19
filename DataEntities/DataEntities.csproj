@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
+    <RootNamespace>Unibet.DataEntities</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

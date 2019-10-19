@@ -60,5 +60,8 @@
   <ItemGroup>
     <Build Include="EnumCurrencyList.sql" />
     <Build Include="CurrencyRates.sql" />
+    <Build Include="sp_AddRates.sql" />
+    <Build Include="udt_ForexRates.sql" />
+    <Build Include="sp_GetLatestRate.sql" />
   </ItemGroup>
 </Project>

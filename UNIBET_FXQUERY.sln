@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataEntities", "DataEntitie
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataHandler", "DataHandler\DataHandler.csproj", "{10FE93B4-9199-4C9D-AAEA-ACB36EF2067C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterfaceLibrary", "InterfaceLibrary\InterfaceLibrary.csproj", "{FFC16692-3826-423E-8946-DDEB1F7C8ACE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{10FE93B4-9199-4C9D-AAEA-ACB36EF2067C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10FE93B4-9199-4C9D-AAEA-ACB36EF2067C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10FE93B4-9199-4C9D-AAEA-ACB36EF2067C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFC16692-3826-423E-8946-DDEB1F7C8ACE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFC16692-3826-423E-8946-DDEB1F7C8ACE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFC16692-3826-423E-8946-DDEB1F7C8ACE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFC16692-3826-423E-8946-DDEB1F7C8ACE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

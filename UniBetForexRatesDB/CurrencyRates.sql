@@ -1,6 +1,6 @@
-﻿CREATE TABLE [dbo].[CurrencyRatesTable]
+﻿CREATE TABLE [dbo].[CurrencyRates]
 (
-	[Id] BIGINT NOT NULL PRIMARY KEY,
+	[Id] BIGINT NOT NULL PRIMARY KEY IDENTITY,
 	[BaseCurrencyId] INT NOT NULL REFERENCES [dbo].[EnumCurrencyList],
 	[DestinationCurrencyId] INT NOT NULL REFERENCES [dbo].[EnumCurrencyList],
 	[ConversionRate] DECIMAL NOT NULL,
