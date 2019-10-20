@@ -3,7 +3,7 @@
 	@targetCurrency VARCHAR(50)
 AS
 BEGIN
-	SELECT TOP 1 Base.CurrencyName, Trgt.CurrencyName, Rates.ConversionRate, Timestamp 
+	SELECT TOP 1 Base.CurrencyName [BaseCurrency], Trgt.CurrencyName [TargetCurrency], Rates.ConversionRate, Timestamp 
 	FROM CurrencyRates Rates (NOLOCK)
 	INNER JOIN EnumCurrencyList Base ON Base.CurrencyId = Rates.BaseCurrencyId
 	INNER JOIN EnumCurrencyList Trgt ON Trgt.CurrencyId = Rates.DestinationCurrencyId

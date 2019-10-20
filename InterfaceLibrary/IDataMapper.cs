@@ -8,6 +8,8 @@ namespace Unibet.InterfaceLibrary
 {
     public interface IDataMapper
     {
-        CurrencyRates ConvertDBToEntity(DataSet ds);
+        List<CurrencyRates> ConvertDBToEntity(DataSet ds);
+
+        DataTable ConvertEntityToDataTable(List<CurrencyRates> ds);
     }
 }

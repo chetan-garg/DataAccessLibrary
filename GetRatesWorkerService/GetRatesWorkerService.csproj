@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <UserSecretsId>dotnet-GetRatesWorkerService-74CFAE57-00F6-402E-BC37-78B9B94FBB9B</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Castle.Windsor" Version="5.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="3.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccessLibrary\DataAccessLibrary.csproj" />
+    <ProjectReference Include="..\DataHandler\DataHandler.csproj" />
+    <ProjectReference Include="..\GetRatesWorker\GetRatesWorker.csproj" />
+    <ProjectReference Include="..\InterfaceLibrary\InterfaceLibrary.csproj" />
+  </ItemGroup>
+</Project>

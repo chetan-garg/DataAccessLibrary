@@ -16,12 +16,17 @@ namespace Unibet.DataHandler
         }
         public bool AddExchangeRates(List<CurrencyRates> currencyRates)
         {
-            throw new NotImplementedException();
+            if (_dataLayer != null)
+            {
+                return _dataLayer.AddExchangeRates(_dataMapper.ConvertEntityToDataTable(currencyRates));
+            }
+
+            return false;
         }
 
         public List<CurrencyRates> GetExchangeRate(string baseCurrency, string targetCurrency)
         {
-            throw new NotImplementedException();
+            return _dataMapper.ConvertDBToEntity(_dataLayer.GetExchangeRate(baseCurrency, targetCurrency));
         }
     }
 }

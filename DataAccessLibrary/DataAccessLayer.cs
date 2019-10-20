@@ -11,20 +11,21 @@ namespace Unibet.DataAccessLibrary
     public class DataAccessLayer : IDataAccessLayer
     {
         ISqlServerDb _sql;
+
         public DataAccessLayer(ISqlServerDb sqlServer)
         {
             _sql = sqlServer;
         }
 
-        public bool AddExchangeRates(List<CurrencyRates> currencyRates)
+        public bool AddExchangeRates(DataTable currencyRates)
         {
-            if (currencyRates != null && currencyRates.Count > 0)
+            if (currencyRates != null && currencyRates.Rows.Count > 0)
             {
                 using (SqlCommand command = _sql.CreateStoredProcCommand(Constants.AddRatesSP))
                 {
                     if (command == null)
                     {
-                        _sql.AddParameter(command, Constants.AddSpParam, System.Data.SqlDbType.Structured, currencyRates.GetTableFromList(), System.Data.ParameterDirection.Input);
+                        _sql.AddParameter(command, Constants.AddSpParam, System.Data.SqlDbType.Structured, currencyRates, System.Data.ParameterDirection.Input);
                         return _sql.ExecuteNonQuery(command) == 1;
                     }
                 }

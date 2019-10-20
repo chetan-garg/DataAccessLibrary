@@ -7,11 +7,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccessLibrary", "DataAc
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "UniBetForexRatesDB", "UniBetForexRatesDB\UniBetForexRatesDB.sqlproj", "{6532034E-28D6-411B-9DCB-EE3F6640F102}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataEntities", "DataEntities\DataEntities.csproj", "{1E5823EA-9762-473D-AAA9-2D6E0BC76DF5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataEntities", "DataEntities\DataEntities.csproj", "{1E5823EA-9762-473D-AAA9-2D6E0BC76DF5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataHandler", "DataHandler\DataHandler.csproj", "{10FE93B4-9199-4C9D-AAEA-ACB36EF2067C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataHandler", "DataHandler\DataHandler.csproj", "{10FE93B4-9199-4C9D-AAEA-ACB36EF2067C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterfaceLibrary", "InterfaceLibrary\InterfaceLibrary.csproj", "{FFC16692-3826-423E-8946-DDEB1F7C8ACE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InterfaceLibrary", "InterfaceLibrary\InterfaceLibrary.csproj", "{FFC16692-3826-423E-8946-DDEB1F7C8ACE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetRatesWorkerService", "GetRatesWorkerService\GetRatesWorkerService.csproj", "{B6DF90E7-787C-427F-86CC-993DAD6A9818}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetRatesWorker", "GetRatesWorker\GetRatesWorker.csproj", "{A0138D3F-0BF2-46F4-BE23-B9C795EB0862}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities", "Utilities\Utilities.csproj", "{2D701FFD-EEDF-49B4-9F1C-7C2DF85EC12A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +47,18 @@ Global
 		{FFC16692-3826-423E-8946-DDEB1F7C8ACE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FFC16692-3826-423E-8946-DDEB1F7C8ACE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FFC16692-3826-423E-8946-DDEB1F7C8ACE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6DF90E7-787C-427F-86CC-993DAD6A9818}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6DF90E7-787C-427F-86CC-993DAD6A9818}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6DF90E7-787C-427F-86CC-993DAD6A9818}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6DF90E7-787C-427F-86CC-993DAD6A9818}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0138D3F-0BF2-46F4-BE23-B9C795EB0862}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0138D3F-0BF2-46F4-BE23-B9C795EB0862}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0138D3F-0BF2-46F4-BE23-B9C795EB0862}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0138D3F-0BF2-46F4-BE23-B9C795EB0862}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D701FFD-EEDF-49B4-9F1C-7C2DF85EC12A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D701FFD-EEDF-49B4-9F1C-7C2DF85EC12A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D701FFD-EEDF-49B4-9F1C-7C2DF85EC12A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D701FFD-EEDF-49B4-9F1C-7C2DF85EC12A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

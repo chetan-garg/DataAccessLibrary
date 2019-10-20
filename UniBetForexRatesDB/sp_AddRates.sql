@@ -14,7 +14,7 @@ BEGIN
 	INNER JOIN 
 		EnumCurrencyList Base ON newRates.BaseCurrency = Base.CurrencyName
 	INNER JOIN 
-		EnumCurrencyList Trgt ON newRates.TargetCurrency = Trget.CurrencyName
+		EnumCurrencyList Trgt ON newRates.TargetCurrency = Trgt.CurrencyName
 
 	IF @@ROWCOUNT = @inputCount
 		RETURN 1
