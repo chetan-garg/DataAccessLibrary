@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -27,27 +28,32 @@ namespace GetRatesWorker
             string apiUrl = Utilities.Utilities.GenerateUrlWithCurrencySymbols(apiBaseUrl, apiKey);
             if (!string.IsNullOrWhiteSpace(apiUrl))
             {
-                var handler = new HttpClientHandler();
-                handler.DefaultProxyCredentials = CredentialCache.DefaultCredentials;
+                List<CurrencyRates> rates = _dataHandler.GetExchangeRate(Enum.GetName(typeof(EnumCurrencyList), EnumCurrencyList.AUD), Enum.GetName(typeof(EnumCurrencyList), EnumCurrencyList.EUR));
 
-                HttpClient client = new HttpClient(handler);
-
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-                HttpResponseMessage response = null;//client.GetAsync(apiUrl).Result;
-
-                if (true)//response.IsSuccessStatusCode)
+                if (rates == null || rates.Where(x => x.Timestamp >= DateTime.Now.Date).Count() <= 0)
                 {
-                    string output = "{\n  \"success\":true,\n  \"timestamp\":1571617453,\n  \"base\":\"EUR\",\n  \"date\":\"2019-10-21\",\n  \"rates\":{\n    \"AUD\":1.627986,\n    \"SEK\":10.780414,\n    \"USD\":1.115898,\n    \"GBP\":0.86448,\n    \"EUR\":1\n  }\n}";//response.Content.ReadAsStringAsync().Result;
-                    Rootobject converter = Newtonsoft.Json.JsonConvert.DeserializeObject<Rootobject>(output);
+                    var handler = new HttpClientHandler();
+                    handler.DefaultProxyCredentials = CredentialCache.DefaultCredentials;
 
-                    var currencyRates = _converter.GetRatesFromJson(converter);
-                    _dataHandler.AddExchangeRates(currencyRates);
-                    
-                }
-                else
-                {
-                    throw new Exception(string.Format("{0}, {1}", response.StatusCode, response.StatusCode));
+                    HttpClient client = new HttpClient(handler);
+
+                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                    HttpResponseMessage response = client.GetAsync(apiUrl).Result;
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        string output = response.Content.ReadAsStringAsync().Result;
+                        Rootobject converter = Newtonsoft.Json.JsonConvert.DeserializeObject<Rootobject>(output);
+
+                        var currencyRates = _converter.GetRatesFromJson(converter);
+                        _dataHandler.AddExchangeRates(currencyRates);
+
+                    }
+                    else
+                    {
+                        throw new Exception(string.Format("{0}, {1}", response.StatusCode, response.StatusCode));
+                    }
                 }
 
             }

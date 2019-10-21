@@ -38,10 +38,10 @@ namespace Unibet.DataAccessLibrary
         {
             using (SqlCommand command = _sql.CreateStoredProcCommand(Constants.GetRatesSP))
             {
-                if (command == null)
+                if (command != null)
                 {
                     _sql.AddParameter(command, Constants.GetSpBaseCurrParam, System.Data.SqlDbType.VarChar, baseCurrency, System.Data.ParameterDirection.Input);
-                    _sql.AddParameter(command, Constants.GetSpTargetCurrParam, System.Data.SqlDbType.VarChar, baseCurrency, System.Data.ParameterDirection.Input);
+                    _sql.AddParameter(command, Constants.GetSpTargetCurrParam, System.Data.SqlDbType.VarChar, targetCurrency, System.Data.ParameterDirection.Input);
                     return _sql.ExecuteDataSet(command);
                 }
             }
