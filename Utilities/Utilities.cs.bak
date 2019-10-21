@@ -16,7 +16,7 @@ namespace Utilities
                 builder.AppendFormat("{0},", item.ToString());
             }
 
-            return string.Format("{0}?access_key={1}&symbols={2}&Format=1", baseUri, apiKey, builder.ToString());
+            return string.Format("{0}?accessKey{1}&symbols={2}&Format=1", baseUri, apiKey, builder.ToString());
         }
     }
 }

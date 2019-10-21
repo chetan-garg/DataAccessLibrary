@@ -15,7 +15,7 @@ namespace Unibet.DataEntities
         public EnumCurrencyList TargetCurrency { get; set; }
         
         public double ConversionRate { get; set; }
-        [IgnoreField]
+		[IgnoreField]
         public DateTime Timestamp { get; set; }
     }
 }

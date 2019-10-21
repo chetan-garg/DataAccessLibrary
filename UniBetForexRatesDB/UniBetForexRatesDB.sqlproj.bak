@@ -22,7 +22,6 @@
     <SqlServerVerification>False</SqlServerVerification>
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
     <TargetDatabaseSet>True</TargetDatabaseSet>
-    <GenerateCreateScript>True</GenerateCreateScript>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -64,8 +63,5 @@
     <Build Include="sp_AddRates.sql" />
     <Build Include="udt_ForexRates.sql" />
     <Build Include="sp_GetLatestRate.sql" />
-  </ItemGroup>
-  <ItemGroup>
-    <PostDeploy Include="AddEnumValues.sql" />
   </ItemGroup>
 </Project>

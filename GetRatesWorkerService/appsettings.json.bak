@@ -1,0 +1,11 @@
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft": "Warning",
+      "Microsoft.Hosting.Lifetime": "Information"
+    }
+  },
+  "ApiBaseUrl": "http://data.fixer.io/api/latest?",
+  "ApiKey": "dd84d2de9aeba3a653e7188432fa3578"
+}

@@ -24,9 +24,9 @@ namespace GetRatesWorkerService
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
 
-            IConfiguration configuration = builder.Build();
+            IConfigurationRoot configuration = builder.Build();
 
-            string connectionString = configuration["Data:ConnectionString"];
+            string connectionString = configuration.GetConnectionString("");
 
             Console.WriteLine(configuration.GetConnectionString("Storage"));
             container.Register(Component.For<IL.IDataHandler>().ImplementedBy<DataHandler>());
@@ -34,7 +34,7 @@ namespace GetRatesWorkerService
             container.Register(Component.For<IL.IDataAccessLayer>().ImplementedBy<DataAccessLayer>());
             container.Register(Component.For<IL.IGetRatesWorker>().ImplementedBy<GetRatesWorker.GetRatesWorker>());
             container.Register(Component.For<IL.IRatesConverter>().ImplementedBy<RatesConverter>());
-            container.Register(Component.For<IL.ISqlServerDb>().ImplementedBy<SqlServerDb>().DependsOn(Dependency.OnConfigValue("connectionString", connectionString)));
+            container.Register(Component.For<IL.ISqlServerDb>().ImplementedBy<SqlServerDb>());
 
 
             CreateHostBuilder(args).Build().Run();

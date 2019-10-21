@@ -26,7 +26,7 @@ namespace GetRatesWorker
                 {
                     foreach (var dest in destCurrencyList)
                     {
-                        if ((EnumCurrencyList)source == (EnumCurrencyList)dest)
+                        if (source == dest)
                         {
                             continue;
                         }
@@ -46,7 +46,7 @@ namespace GetRatesWorker
                                 currencyRates.Add(GetGBPConversionRate((EnumCurrencyList)dest, gbpVsEUR, jsonResponse.rates));
                                 break;
                             case EnumCurrencyList.EUR:
-                                currencyRates.Add(GetEURConversionRate((EnumCurrencyList)dest, 1, jsonResponse.rates));
+                                currencyRates.Add(GetAUDConversionRate((EnumCurrencyList)dest, 1, jsonResponse.rates));
                                 break;
                         }
                     }

@@ -23,7 +23,7 @@ namespace Unibet.DataAccessLibrary
             {
                 using (SqlCommand command = _sql.CreateStoredProcCommand(Constants.AddRatesSP))
                 {
-                    if (command != null)
+                    if (command == null)
                     {
                         _sql.AddParameter(command, Constants.AddSpParam, System.Data.SqlDbType.Structured, currencyRates, System.Data.ParameterDirection.Input);
                         return _sql.ExecuteNonQuery(command) == 1;
