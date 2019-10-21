@@ -8,14 +8,9 @@ using Microsoft.Extensions.Logging;
 namespace UniBetFXApi.Controllers
 {
     [ApiController]
-    [Route("[Unitbet]")]
+    [Route("Unibet")]
     public class UnibetFxController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
-
         private readonly ILogger<UnibetFxController> _logger;
 
         public UnibetFxController(ILogger<UnibetFxController> logger)
@@ -24,13 +19,15 @@ namespace UniBetFXApi.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<FxRate> Get()
+        [Route("")]
+        public IEnumerable<FxRate> Get([FromBody] FxRateRequest requestObject)
         {
             var rng = new Random();
             return Enumerable.Range(1, 5).Select(index => new FxRate
             {
                 Date = DateTime.Now.AddDays(index),
-                
+                BaseCurrency = requestObject.baseCurrency,
+                TargetCurrency = requestObject.targetCurrency
             })
             .ToArray();
         }
